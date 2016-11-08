@@ -48284,6 +48284,9 @@ C     Here comes the logic for setting the value of the attribute for all instan
 ! !hr01       dpsv1(j)=dpsv(j)*c1e3*oidpsv(j)
 !             dpsv1(j)=(dpsv(j)*c1e3)*oidpsv(j)                            !hr01
             enddo
+            do j = 1, 2
+              write(*, *) "DDD>LOG: p", j, " e=", ejfv(j)
+            enddo
          endif
          ldoubleElement = .true.
       endif
