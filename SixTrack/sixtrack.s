@@ -47405,6 +47405,7 @@ C      write(*,*) "DBGDBG c:", funName, len(funName)
             ! can be used to redefine a global variable by some function.
             if (element_name_s .eq. "GLOBAL-VARS") then
                found=.true.
+               badelem = .false.
                
                if (att_name_s .eq. "E0") then
                   if (idp.eq.0 .or. ition.eq.0) then ! 4d tracking..
@@ -47416,6 +47417,7 @@ C      write(*,*) "DBGDBG c:", funName, len(funName)
 +ei
      &                  att_name_s, "' is not valid for 'GLOBAL-VARS' ",
      &                  "when doing 4d tracking"
+                     call prror(-1)
                   endif
                else
                   badelem=.true.
